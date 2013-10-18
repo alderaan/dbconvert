@@ -10,7 +10,11 @@
      //response function for newly created bubble
      function showResponse(responseText, statusText, xhr, $form) { 
 	
-	 alert(responseText);
+	 response = parseInt(responseText);
+	 factor = 2;
+	 computation = response * factor;
+
+	 alert(responseText +" x "+ factor + " = " +  computation);
 
      }
 	
