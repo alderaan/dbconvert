@@ -39,8 +39,8 @@
 
 	 //give out final result
 	 result_str = result.toString();
-	 alert(result_str);
-
+	 $('#result').html('');
+	 $("#result").append(result_str);
 
 	 
 
