@@ -6,13 +6,17 @@
 		resetForm: true //after submitting the form, reset it
      }); 
 		
+
+
      //response function of echo.php
      function showResponse(responseText, statusText, xhr, $form) { 
 	
 	 var response = parseInt(responseText);
-	 var base = 2;
 	 var remainder = new Array();
 	 var i = 0;
+
+	 //get value from dropdown list
+	 var base = $("#base").val();
 
 	 //Do division and store remainder in array
 	 while (response>0)
@@ -37,6 +41,21 @@
 	 result_str = result.toString();
 	 alert(result_str);
 
+
+	 
+
+
+
+
      }
 	
 }); 
+
+/*
+33 - 33 = 0 = j-0
+32 - 31 = 1 0 j-1 = j- (
+31  -29  = 2
+29  -26  = 3
+28  -22  = 4
+6  -1  = 5
+*/
