@@ -39,8 +39,9 @@
 
 	 //give out final result
 	 result_str = result.toString();
+	 var result_str2 = result_str.replace(/,/g,""); 
 	 $('#result').html('');
-	 $("#result").append(result_str);
+	 $("#result").append(result_str2);
 
 	 
 
