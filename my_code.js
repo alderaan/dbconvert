@@ -15,9 +15,29 @@
 	 var remainder = new Array();
 	 var i = 0;
 
-	 //get value from dropdown list
-	 var base = $("#base").val();
+	 var base = 2;
 
+ 	 //Binary to Decimal
+	 var responsetoarray = response.toString().split("");
+	 var lengthbinary = response.toString().length;
+	 var powers = new Array();
+	 var sumresult = 0;
+	 
+	 for (var i=0;i<lengthbinary;i++)
+	 { 
+	     powers[i]=Math.pow(2,(lengthbinary-1-i));
+	     if (responsetoarray[i]==1)
+	     {
+		 sumresult = sumresult + powers[i];
+		 		 
+	     }
+	 }
+	 
+	 $('#result').html('');
+	 $("#result").append(sumresult);
+	 
+
+	 /*
 	 //Do division and store remainder in array
 	 while (response>0)
 	 {
@@ -36,6 +56,9 @@
 	     result[k] = remainder[j];
 	     k++;
 	 }
+	 
+	 
+
 
 	 //give out final result
 	 result_str = result.toString();
@@ -44,7 +67,7 @@
 	 $("#result").append(result_str2);
 
 	 
-
+	 */
 
 
 
