@@ -3,17 +3,22 @@
      // bind form using ajaxForm (powered by jQuery form plugin)
      $('#myForm').ajaxForm({ 
 	 success: showResponse, //when the php form returns a success, call showResponse function
-		resetForm: true //after submitting the form, reset it
+		resetForm: false //after submitting the form, reset it
      }); 
 		
+     $("#inputbin").on('input', function() {
+
+	 $(this).submit();
+});
 
 
      //response function of echo.php
      function showResponse(responseText, statusText, xhr, $form) { 
 	
 	 var direction = $("input[name=direction]:checked").val();
-	 var response = parseInt(responseText);
+	 var response = responseText;
 	 var remainder = new Array();
+	 var finalresult = "";
 	 var i = 0;
 
 	 var base = 2;
@@ -21,8 +26,8 @@
  	 //Binary to Decimal
 	 if (direction==2)
 	 {
-	     var responsetoarray = response.toString().split("");
-	     var lengthbinary = response.toString().length;
+	     var responsetoarray = response.split("");
+	     var lengthbinary = response.length;
 	     var powers = new Array();
 	     var sumresult = 0;
 
@@ -37,8 +42,8 @@
 		 }
 	     }
 	     
-	     $('#result').html('');
-	     $("#result").append(sumresult);
+	     finalresult = sumresult;
+	    
 	 }
 	 if (direction==1)
 	 {    
@@ -46,11 +51,14 @@
 	     //Decimal to binary
 	 
 	     //Do division and store remainder in array
-	     while (response>0)
+	     var responseint = parseInt(response);
+	     while (responseint>0)
 	     {
-		 remainder[i]  = response%base;
-		 response = Math.floor(response/base);
+		 remainder[i]  = responseint%base;
+		 responseint = Math.floor(responseint/base);
+		 //alert(response%base);
 		 i++;
+		 
              } 
  	     
 	     //change direction of array
@@ -64,14 +72,16 @@
 		 k++;
 	     }
 	     
-	     //give out final result
 	     result_str = result.toString();
 	     var result_str2 = result_str.replace(/,/g,""); 
-	     $('#result').html('');
-	     $("#result").append(result_str2);
+	     finalresult = result_str2;
 
 	 }
-
+	 
+	 //give out final result
+	 $('#result').html('');
+	 $("#result").hide().append(finalresult).fadeIn(200);
+	 $("#inputdec").val(finalresult);
 
      }
 	
