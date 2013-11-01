@@ -78,6 +78,9 @@
 	     }
 	     
 	     finalresult = sumresult;
+	     if (finalresult==0){
+		 finalresult = "";
+	     }
 	 
 	     $("#inputdec").val(finalresult);
 	     
