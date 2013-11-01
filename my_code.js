@@ -1,26 +1,20 @@
  $(document).ready(function() {
     
-     
      var direction = 0;
      var response = 0;
      
      $("#inputdec").on('input', function() {
-
 	 direction = 1;
 	 response = $("#inputdec").val();
 	 conversion();
      });
 
-
      $("#inputbin").on('input', function() {
-
-	 $(this).submit();
 	 direction = 2;
+	 response = $("#inputbin").val();
+	 conversion();
      });
-
-         
-
-     
+   
      function conversion() {
 	 
 	 //var response = responseText;
@@ -33,9 +27,7 @@
  	 //Decimal to binary
 	 if (direction==1)
 	 {    
-	 
-	     
-	 
+
 	     //Do division and store remainder in array
 	     var responseint = parseInt(response);
 	     while (responseint>0)
@@ -90,9 +82,6 @@
 	     $("#inputdec").val(finalresult);
 	     
 	 }
-
-	 
-	 
 
      }
 	

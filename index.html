@@ -3,45 +3,28 @@
 <html>
   <head>
     <title>Conversion between decimal and binary format</title>
- 
-    <link type="text/css" href="styles.css" rel="stylesheet" />
-  </head>
-  <body>
-
-    
-
-
-<div id="wrapper">
-  <div id="header">Header</div>
-  <div id="content">
-    <div id="content-left"></div>
-    <div id="content-main">
-
-<form id="myForm" action="echo.php" method="post" class="navigation" autocomplete="off"> 
-     Dec <input id="inputdec" type="text" name="message" value="" placeholder="enter a number" class="buttons"/> 
-    <br><br> Bin <input id="inputbin" type="text" name="message1" value="" placeholder="enter a number" class="buttons"/> 
-</form>
-<span id="result"></span>
-
-<br><br>
-<form id="direction">
-<input type="radio" name="direction" value="1" checked>Decimal -> Binary<br>
-<input type="radio" name="direction" value="2">Binary -> Decimal
-</form>
-
-
-</div>
-    <div id="content-right"></div>
-    </div>
-  <div id="footer"></div>
-  <div id="bottom"></div>
-</div>
-
-
-
+     <link type="text/css" href="styles.css" rel="stylesheet" />
     <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="jquery.form.js"></script>
     <script type="text/javascript" src="my_code.js"></script>
+  </head>
 
- </body>
+  <body>
+    <div id="wrapper">
+      <div id="header"></div>
+      <div id="content">
+	<div id="content-left"></div>
+	<div id="content-main">
+	  <form id="myForm" method="post" class="navigation" autocomplete="off"> 
+	    <input id="inputdec" type="text" name="inputdecimal" value="" placeholder="enter a decimal number" class="buttons"/><br><br> 
+	    <input id="inputbin" type="text" name="inputbinary" value="" placeholder="enter a binary number" class="buttons"/> 
+	  </form>
+	  <span id="result"></span>
+	</div>
+	<div id="content-right"></div>
+      </div>
+      <div id="footer"></div>
+      <div id="bottom"></div>
+    </div>
+  </body>
+
 </html>
