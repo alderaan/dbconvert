@@ -8,7 +8,7 @@ body {
     margin:0px auto;
     border:0px solid #bbb;
     padding:10px;
-    background-color:#FFB8A8;
+    #background-color:#FFB8A8;
     }
 
 #header {
@@ -62,14 +62,14 @@ body {
 }
 
 #inputdec {
-    width:70%;
+    width:90%;
     text-align:center;
     line-height:2em;
     border:0px solid;
 }
 
 #inputbin {
-    width:70%;
+    width:90%;
     text-align:center;
     line-height:2em;
     border:0px solid;

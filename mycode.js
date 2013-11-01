@@ -65,7 +65,6 @@
 	     var lengthbinary = response.length;
 	     var powers = new Array();
 	     var sumresult = 0;
-
 	     
 	     for (var i=0;i<lengthbinary;i++)
 	     { 
