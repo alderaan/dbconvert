@@ -4,6 +4,7 @@
      var response = 0;
      
      $("#inputdec").on('input', function() {
+     //$("#inputdec").keydown(function(){
 	 direction = 1;
 	 response = $("#inputdec").val();
 	 conversion();
@@ -14,6 +15,8 @@
 	 response = $("#inputbin").val();
 	 conversion();
      });
+
+     
    
      function conversion() {
 	 
@@ -54,7 +57,8 @@
 	     var result_str2 = result_str.replace(/,/g,""); 
 	     finalresult = result_str2;
 
-	     $("#inputbin").val(finalresult);
+	     validation(finalresult);
+	     
 
 	 }    
 
@@ -76,16 +80,59 @@
 		 }
 	     }
 	     
-	     finalresult = sumresult;
+	     finalresult = parseInt(sumresult);
 	     if (finalresult==0){
 		 finalresult = "";
 	     }
 	 
-	     $("#inputdec").val(finalresult);
+	     validation(finalresult);
+	     
 	     
 	 }
 
      }
+     
+     //validate results from conversion function
+     function validation (finalresult){
+	 if (direction == 1){
+	      if (response > 4503599627370496) { 
+		 // alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
+		  $("#inputdec").val("");
+		  $("#inputbin").val("");
+		
+				  }
+	     outputresult(finalresult);
+	     
+	 }
+	 if (direction == 2){
+	     if (finalresult > 4503599627370496){
+		 //alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
+		 $("#inputdec").val("");
+		 $("#inputbin").val("");
+	     }
+	     
+	     outputresult(finalresult);
+	 }
+
+     }
+
+     //Output the final result, after validation, to the respective input box
+     function outputresult (finalresult){
+
+	 if (direction == 1) {
+
+	     $("#inputbin").val(finalresult);
+     }
+
+	 if (direction ==2) {
+
+	     $("#inputdec").val(finalresult);
+
+	 }
+
+     }
+
+
 	
 }); 
 
