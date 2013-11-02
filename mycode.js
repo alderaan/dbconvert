@@ -96,22 +96,25 @@
      function validation (finalresult){
 	 if (direction == 1){
 	      if (response > 4503599627370496) { 
-		 // alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
+		  alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
 		  $("#inputdec").val("");
 		  $("#inputbin").val("");
 		
 				  }
+	     else {
 	     outputresult(finalresult);
+	     }
 	     
 	 }
 	 if (direction == 2){
 	     if (finalresult > 4503599627370496){
-		 //alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
+		 alert("Das obere Limit fuer Dezimalzahlen wurde erreicht!");
 		 $("#inputdec").val("");
 		 $("#inputbin").val("");
 	     }
-	     
+	     else {
 	     outputresult(finalresult);
+	     }
 	 }
 
      }
