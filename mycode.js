@@ -1,21 +1,23 @@
  $(document).ready(function() {
     
+     var largeNumber = bigInt("798989898989898989898989898989898989898989898989898989898985643564363473453456342378564387956906736546456235345");
+     alert(largeNumber);
+
      var direction = 0;
      var response = 0;
      
      $("#inputdec").on('input', function() {
      //$("#inputdec").keydown(function(){
 	 direction = 1;
-	 response = $("#inputdec").val();
+	 response = bigInt($("#inputdec").val());
 	 conversion();
      });
 
      $("#inputbin").on('input', function() {
 	 direction = 2;
-	 response = $("#inputbin").val();
+	 response = bigInt($("#inputbin").val());
 	 conversion();
      });
-
      
    
      function conversion() {
